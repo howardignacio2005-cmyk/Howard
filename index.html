@@ -1,72 +1,100 @@
+<!DOCTYPE html>
 <html lang="en">
-<head>   
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Login</title>
-    </head>
-</html>
-</br></br></br></br></br></br></br></br>
-<body id="body">
-        <center><div id=Login>
-            <center><font size="5"></font></center>
-    <center><h2>Login</h2></center>
-        <form>
-            <center><font size="5"></font></center>
-            <center><label id="sign in" for="sign">Sign in to your account</label></center>
-            
-            <center><label id="username" for="username">Username:</label><br /></h2></center>
-            <center><input type="text" id="aput" name="username" /><br /><br />
-            
-            <center><label id="password" for="password">Password:</label><br />
-            <center><input type="text" id="aput" name="password" /><br /><br />
-            
-            <input type="checkbox" name="remember" />
-            <label id="remember" for="remember" >Remember me</label> <br /><br />
-            
-            <button id=submit type="submit">Submit</button>
-            <button id=button type="button">Cancel</button>
-                </div></center>
-                <style>
-                    #Login
-                    {color: white}
-                #sign in
-                    {color: white}
-                    #body
-                    {background-color:darkgray;
-                        
-                    }
-                    #aput
-                    {color: black}
-                #username
-                    {color:white;
-                      
-                    }
-                #password
-                    {color:white;
-                        
-                    }
-                #remember
-                    {
-                    color:white;  
-                    }
-                #submit
-                    {background-color:white;
-                        
-                    }
-                #button
-                    {background-color:white;
-                        
-                    }
-                #Login
-                    
-                    {
-                        background-color:darksalmon;
-                        align-content: center;
-                        width:50%;
-                        height: 80%;
-                        border-radius: 50px;
-                    }
-                </style>
+    <style>
+        body {
+            background-color: darkgray;
+            font-family: Arial, sans-serif;
+        }
+
+        #Login {
+            background-color: darksalmon;
+            width: 50%;
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 30px;
+            border-radius: 50px;
+            text-align: center;
+            color: white;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 80%;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+
+        input[type="checkbox"] {
+            margin-top: 10px;
+        }
+
+        button {
+            background-color: white;
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div id="Login">
+        <h2>Login</h2>
+        <form onsubmit="goToAboutMe(event)">
+            <label for="username">Username:</label>
+            <input type="text" id="usernameInput" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="passwordInput" name="password" required>
+
+            <div>
+                <input type="checkbox" name="remember" id="remember">
+                <label for="remember">Remember me</label>
+            </div>
+
+            <button type="submit">Submit</button>
+            <button type="button" onclick="resetForm()">Cancel</button>
         </form>
-    </body>
+    </div>
+
+    <script>
+        function goToAboutMe(event) {
+            event.preventDefault(); // prevent page refresh
+
+            // Optional: validate username/password here
+            // const username = document.getElementById("usernameInput").value;
+            // const password = document.getElementById("passwordInput").value;
+            // if(username === "" || password === "") { alert("Fill all fields!"); return; }
+
+            // Redirect to aboutme.html
+            window.location.href = "aboutme.html";
+        }
+
+        function resetForm() {
+            document.querySelector("form").reset();
+        }
+    </script>
+</body>
 </html>
+
