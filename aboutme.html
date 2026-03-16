@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Login</title>
+    <style>
+        body {
+            background-color: darkgray;
+            font-family: Arial, sans-serif;
+        }
+
+        #Login {
+            background-color: darksalmon;
+            width: 50%;
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 30px;
+            border-radius: 50px;
+            text-align: center;
+            color: white;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-top: 10px;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"], input[type="password"] {
+            width: 80%;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+
+        input[type="checkbox"] {
+            margin-top: 10px;
+        }
+
+        button {
+            background-color: white;
+            color: black;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 10px;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div id="Login">
+        <h2>Login</h2>
+        <form onsubmit="goToAboutMe(event)">
+            <label for="username">Username:</label>
+            <input type="text" id="usernameInput" name="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="passwordInput" name="password" required>
+
+            <div>
+                <input type="checkbox" name="remember" id="remember">
+                <label for="remember">Remember me</label>
+            </div>
+
+            <button type="submit">Submit</button>
+            <button type="button" onclick="resetForm()">Cancel</button>
+        </form>
+    </div>
+
+    <script>
+        function goToAboutMe(event) {
+            event.preventDefault(); // prevent page refresh
+
+            // Optional: validate username/password here
+            // const username = document.getElementById("usernameInput").value;
+            // const password = document.getElementById("passwordInput").value;
+            // if(username === "" || password === "") { alert("Fill all fields!"); return; }
+
+            // Redirect to aboutme.html
+            window.location.href = "aboutme.html";
+        }
+
+        function resetForm() {
+            document.querySelector("form").reset();
+        }
+    </script>
+</body>
+</html>
